@@ -1,0 +1,359 @@
+/* Login Page Styles */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 50%, #1fca88 100%);
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.25);border: 1px solid #f3f4f6;
+  border: 1px solid #f3f4f6;
+  backdrop-filter: blur(10px);
+  padding: 0 0 24px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+.login-card:hover{
+  box-shadow: 0 4px 12px rgba(25, 36, 70, 0.3);
+  transition: box-shadow 0.4 ease-out;
+}
+
+
+/* Header */
+.login-header {
+    background: linear-gradient(135deg, #1fca88 0%, #16a085 100%);
+    color: white;
+    padding: 30px 40px;
+}
+
+
+.login-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 6px ;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* Form */
+.login-form {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lform-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.lform-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.linput-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.linput-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.linput-icon {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.lform-input {
+  width: 100%;
+  padding: 24px 16px 16px 48px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #334155;
+    transition: border-color 0.2s ease;
+    outline-offset: 2px;
+}
+
+.lform-input:focus {
+  border-color: #3b82f6;
+ outline: none;
+}
+
+.linput-container:hover  .lform-input:not(:focus) {
+  border-color: black; 
+}
+
+
+.lform-input.error {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.lform-input.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.lpassword-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.lpassword-toggle:hover {
+  color: black;
+}
+
+.lerror-message {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.lerror-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  top: 3px;
+  position: relative;
+}
+
+/* Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.checkbox-checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.checkbox-container:hover .checkbox-checkmark {
+  border-color: #94a3b8;       
+  background-color: #f1f5f9;   
+  transition: all 0.2s ease;
+}
+
+.checkbox-input:checked + .checkbox-checkmark {
+  background: #16a085;
+  border-color: #16a085;
+}
+
+.checkbox-input:checked + .checkbox-checkmark::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: #374151;
+}
+
+.forgot-password-link {
+  color: #2563eb;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 550 ;
+}
+
+.forgot-password-link:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: #2563eb;
+}
+
+.forgot-password-link:hover:after {
+  width: 100%;
+}
+
+/* Submit Button */
+.lsubmit-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1fca88 0%, #149e6e 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.lsubmit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.lsubmit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.lsubmit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.lloading-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.lloading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+
+/* Sign Up Section */
+.signup-section {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+
+.signup-link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+.signup-link a {
+  color: #2563eb;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 600 ;
+}
+
+.signup-link a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.signup-link a :hover {
+  color: #0056b3;
+}
+
+.signup-link a:hover:after {
+  width:100%;
+}
+
