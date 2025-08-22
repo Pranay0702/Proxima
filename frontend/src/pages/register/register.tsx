@@ -13,9 +13,9 @@ import {
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
-import { FormData } from '../../shared/interfaces/register.interface';
+import { User__ } from '../../shared/interfaces/register.interface';
 import { toast } from 'react-toastify';
-import { Axios, AxiosError, AxiosResponse } from 'axios';
+import { AxiosError, AxiosResponse } from 'axios';
 import { register } from '../../shared/config/api';
 
 interface FormErrors {
@@ -24,7 +24,7 @@ interface FormErrors {
 
 export default function Register() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<User__>({
     username: '',
     email: '',
     location: '',
@@ -85,17 +85,10 @@ export default function Register() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    
+    setFormData(prev => ({...prev, [name]: value}));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
+      setErrors(prev => ({...prev, [name]: ''}));
     }
   };
 
@@ -121,13 +114,13 @@ export default function Register() {
       }
     )
 
-    
-    // Simulate API call
+    {/*// Simulate API call
     setTimeout(() => {
       setIsLoading(false);
       console.log('Registration data:', formData);
       // Handle successful registration here
-    }, 2000);
+    }, 2000);*/}
+    
   };
 
   const getPasswordStrength = (password: string): { strength: string; className: string } => {

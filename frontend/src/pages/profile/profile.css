@@ -1,0 +1,436 @@
+/* General Layout */
+.profile-page {
+  background: #f3f2ef;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+/* Header Bar */
+.profile-header-bar {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.back-button:hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  background-color: #eef3f8;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.edit-button,
+.save-button,
+.cancel-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-button {
+  background: #0a66c2;
+  color: white;
+}
+
+.edit-button:hover {
+  background: #004182;
+}
+
+.save-button {
+  background: #28a745;
+  color: white;
+}
+
+.save-button:hover {
+  background: #1e7e34;
+}
+
+.cancel-button {
+  background: #6c757d;
+  color: white;
+}
+
+.cancel-button:hover {
+  background: #545b62;
+}
+
+/* Content Container */
+.profile-content {
+  max-width: 900px;
+  margin: 32px auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Cover Section */
+.cover-section {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.change-cover-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.change-cover-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Avatar */
+.profile-info-section {
+  position: relative;
+  padding: 0 24px 32px;
+}
+
+.avatar-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -80px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar-large {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  background-color: #eee;
+}
+
+.change-avatar-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: 0.2s ease;
+}
+
+.change-avatar-btn:hover {
+  background: #004182;
+}
+
+/* Profile Display */
+.profile-display {
+  text-align: center;
+  padding: 0 24px;
+}
+
+.profile-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.profile-title {
+  font-size: 18px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* Meta Info */
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* About */
+.profile-description {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.profile-description h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.profile-description p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Skills */
+.skills-section {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.skills-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: #e3f2fd;
+  color: #0a66c2;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.skill-tag.editable {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.remove-skill {
+  background: none;
+  border: none;
+  color: #666;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+/* Edit Form */
+.edit-form {
+  padding: 0 24px 32px;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s ease;
+  background: #f9f9f9;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #0a66c2;
+  background: white;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Skills Editing */
+.skills-edit {
+  margin-top: 8px;
+}
+
+.add-skill {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.skill-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-skill-btn {
+  background: #0a66c2;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-skill-btn:hover {
+  background: #004182;
+}
+
+/* Password Section */
+.password-section {
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  padding-top: 24px;
+}
+
+.password-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #f1f1f1;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.password-toggle-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Experience / Education */
+.section {
+  padding: 32px 24px;
+  border-top: 1px solid #eee;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.experience-list,
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.experience-item,
+.education-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #0a66c2;
+}
+
+.education-item {
+  border-left-color: #28a745;
+}
+
+.experience-item h4,
+.education-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.experience-item .company,
+.education-item .school {
+  font-size: 14px;
+  color: #0a66c2;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.education-item .school {
+  color: #28a745;
+}
+
+.experience-item .duration,
+.education-item .year {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.experience-item .description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}

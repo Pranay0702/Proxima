@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import JWT from 'jsonwebtoken';
 
 export async function register(req, res){
+    console.log(req.body);
     try{
         const{username, email, password, location, jobTitle, description} = req.body;
         const userExists = await User.findOne({username});
@@ -25,11 +26,13 @@ export async function register(req, res){
 export async function login(req, res){
     try{
         const {username, password} = req.body;
-        const user = await User.findOne({username});
-        if (!user) return res.status(400).json({message: "Invalid username"});
+        const user = await User.findOne({ $or: [{username},{email:username}]
+        });
+        
+        if (!user) return res.status(400).json({message: "User not found"});
 
         const  isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).json({message: "Invalid password"});
+        if (!isMatch) return res.status(400).json({message: "Invalid credentials"});
 
         const token = JWT.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '1h'});
         res.json({message: "Login successful", token, user: {id: user._id, username: user.username, email: user.email}});
